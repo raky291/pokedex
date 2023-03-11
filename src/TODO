@@ -1,11 +1,22 @@
 https://github.com/skydoves/Pokedex
 https://github.com/MatheusPires99/pokedex
 
-create menu
-add routes
-add breadcrumb
+version 0
+show details
 
-clean app
-clean styles
-add bootstrap?
-responsive
+version 1
+navigation / routes / breadcrumb
+
+version 2
+create menu
+add pages / about
+
+version 3
+clean styles / bootstrap / responsive
+clean code / types
+
+version 4
+pagination / infinite scroll
+
+version 5
+axios
