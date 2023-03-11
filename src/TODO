@@ -20,3 +20,7 @@ pagination / infinite scroll
 
 version 5
 axios
+
+version 6
+error handler
+publish
