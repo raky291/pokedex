@@ -1,5 +1,5 @@
-import { PokeList } from "../poke-list/poke-list";
-import "./pokedex.scss";
+import { PokeList } from "../../organisms/PokemonList";
+import "./styles.scss";
 
 export function Pokedex() {
   return (

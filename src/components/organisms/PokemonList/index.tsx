@@ -1,7 +1,8 @@
-import { useGetPokemonListQuery } from "../../api/poke-api";
-import { ErrorMessage, LoadingSpinner } from "../../components";
-import { PokeCard } from "../poke-card/poke-card";
-import "./poke-list.scss";
+import { useGetPokemonListQuery } from "../../../api/poke-api";
+import { Alert } from "../../atoms/Alert";
+import { Spinner } from "../../atoms/Spinner";
+import { PokeCard } from "../../molecules/PokemonCard";
+import "./styles.scss";
 
 export function PokeList() {
   const { isError, isLoading, isSuccess, data } = useGetPokemonListQuery();
@@ -9,9 +10,9 @@ export function PokeList() {
   return (
     <div className={"poke-list"}>
       {isError ? (
-        <ErrorMessage message={"Error"} />
+        <Alert message={"Error"} />
       ) : isLoading ? (
-        <LoadingSpinner />
+        <Spinner />
       ) : isSuccess ? (
         data.results.map((resource, index) => (
           <div key={index} className={"poke-item"}>

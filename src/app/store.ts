@@ -1,6 +1,6 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { pokeApi } from "../api/poke-api";
-import counterReducer from "../features/counter/counterSlice";
+import counterReducer from "../counter/counterSlice";
 
 export const store = configureStore({
   reducer: {

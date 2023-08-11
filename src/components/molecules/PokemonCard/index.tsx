@@ -1,7 +1,8 @@
-import { useGetPokemonQuery } from "../../api/poke-api";
-import { INamedAPIResource } from "../../api/types";
-import { ErrorMessage, LoadingSpinner } from "../../components";
-import "./poke-card.scss";
+import { useGetPokemonQuery } from "../../../api/poke-api";
+import { INamedAPIResource } from "../../../api/types";
+import { Alert } from "../../atoms/Alert";
+import { Spinner } from "../../atoms/Spinner";
+import "./styles.scss";
 
 interface IPokeCardProps {
   resource: INamedAPIResource;
@@ -14,9 +15,9 @@ export function PokeCard(props: IPokeCardProps) {
   return (
     <div className={"poke-card"}>
       {isError ? (
-        <ErrorMessage message={"Error"} />
+        <Alert message={"Error"} />
       ) : isLoading ? (
-        <LoadingSpinner />
+        <Spinner />
       ) : isSuccess ? (
         <>
           <div className={"header"}>
