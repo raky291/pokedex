@@ -1,11 +1,10 @@
-import "./App.css";
-import { Pokedex } from "./components/templates/Pokedex";
+import { Home } from "./components/pages/Home";
 import "./styles/main.scss";
 
 export function App() {
   return (
-    <div className={"app"}>
-      <Pokedex />
+    <div>
+      <Home />
     </div>
   );
 }
