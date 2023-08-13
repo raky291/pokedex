@@ -3,26 +3,15 @@ https://github.com/MatheusPires99/pokedex
 https://www.pkmn.help/pokedex/
 https://github.com/alexander-elgin/atomic-react-redux
 
-version 0
-show details
+add header and footer
+add react router
+add pages (about)
+add bootstrap
+add atomic design
 
-version 1
-navigation / routes / breadcrumb
-
-version 2
-create menu
-add pages / about
-
-version 3
-clean styles / bootstrap / responsive
-clean code / types
-
-version 4
+update card component
 pagination / infinite scroll
-
-version 5
 axios
-
-version 6
+clean types
 error handler
 publish
