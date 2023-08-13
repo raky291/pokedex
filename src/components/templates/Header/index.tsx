@@ -1,16 +1,22 @@
-export function Header() {
+import { NavLink } from "react-router-dom";
+
+export default function Header() {
   return (
-    <div className="container">
-      <header className="d-flex justify-content-center my-4 py-3">
+    <header className="py-4">
+      <div className="container d-flex justify-content-center">
         <ul className="nav nav-pills">
           <li className="nav-item">
-            <a className="nav-link active">Home</a>
+            <NavLink to="/" end className="nav-link">
+              Home
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link">About</a>
+            <NavLink to="/about" className="nav-link">
+              About
+            </NavLink>
           </li>
         </ul>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }

@@ -1,13 +1,3 @@
-import { Footer } from "../../templates/Footer";
-import { Header } from "../../templates/Header";
-import { Pokedex } from "../../templates/Pokedex";
-
-export function Home() {
-  return (
-    <div>
-      <Header />
-      <Pokedex />
-      <Footer />
-    </div>
-  );
+export default function Home() {
+  return <h1 className="text-center">Pokédex</h1>;
 }
