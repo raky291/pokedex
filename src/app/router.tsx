@@ -1,15 +1,15 @@
-import React from "react";
+import { Suspense, lazy } from "react";
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Loading from "../components/atoms/Loading";
-import Home from "../components/pages/Home";
-import Layout from "../components/templates/Layout";
+import Loading from "../components/atoms/Loading/Loading";
+import Home from "../components/pages/Home/Home";
+import Layout from "../components/templates/Layout/Layout";
 
-const About = React.lazy(() => import("../components/pages/About"));
-const NotFound = React.lazy(() => import("../components/pages/NotFound"));
+const About = lazy(() => import("../components/pages/About/About"));
+const NotFound = lazy(() => import("../components/pages/NotFound/NotFound"));
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,17 +18,17 @@ export const router = createBrowserRouter(
       <Route
         path="about"
         element={
-          <React.Suspense fallback={<Loading />}>
+          <Suspense fallback={<Loading />}>
             <About />
-          </React.Suspense>
+          </Suspense>
         }
       />
       <Route
         path="*"
         element={
-          <React.Suspense fallback={<Loading />}>
+          <Suspense fallback={<Loading />}>
             <NotFound />
-          </React.Suspense>
+          </Suspense>
         }
       />
     </Route>
