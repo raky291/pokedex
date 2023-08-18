@@ -1,0 +1,15 @@
+@import "src/styles/abstracts";
+
+$shade-amount: 41%;
+
+@each $type, $value in $pokemon-types {
+  .pokemon-type-#{$type} {
+    color: color-contrast(shade-color($value, $shade-amount)) !important;
+    background-color: shade-color($value, $shade-amount) !important;
+    border: 2px solid;
+    border-color: $value;
+    margin-right: 5px;
+    text-transform: capitalize;
+    font-size: 1rem !important;
+  }
+}
