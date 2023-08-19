@@ -32,26 +32,10 @@ export function PokemonCard({ name }: PokemonCardProps) {
           <div className="d-flex justify-content-center">
             <PokemonType type="normal" />
             <PokemonType type="fighting" />
-            <PokemonType type="flying" />
-            <PokemonType type="poison" />
-            <PokemonType type="ground" />
-            <PokemonType type="rock" />
-            <PokemonType type="bug" />
-            <PokemonType type="ghost" />
-            <PokemonType type="steel" />
-            <PokemonType type="fire" />
-            <PokemonType type="water" />
-            <PokemonType type="grass" />
-            <PokemonType type="electric" />
-            <PokemonType type="psychic" />
-            <PokemonType type="ice" />
-            <PokemonType type="dragon" />
-            <PokemonType type="dark" />
-            <PokemonType type="fairy" />
           </div>
         </div>
         <div className="col-md-7 my-1">
-          {/* <div className="d-flex justify-content-center justify-content-md-end">
+          <div className="d-flex justify-content-center justify-content-md-end">
             <a
               href="https://bulbapedia.bulbagarden.net/wiki/Bulbasaur_(Pok%C3%A9mon)"
               target="_blank"
@@ -59,7 +43,7 @@ export function PokemonCard({ name }: PokemonCardProps) {
             >
               Bulbapedia
             </a>
-          </div> */}
+          </div>
         </div>
       </div>
     </Card>

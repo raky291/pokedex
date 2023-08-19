@@ -1,15 +1,30 @@
 @import "src/styles/abstracts";
 
-$shade-amount: 41%;
+.pokemon-type {
+  display: inline-block;
+  padding: 5px;
+  border: 2px solid;
+  border-radius: $border-radius-sm;
+  width: 100%;
+  max-width: 80px;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 1;
+}
 
-@each $type, $value in $pokemon-types {
+@mixin pokemon-type-variant(
+  $background,
+  $border,
+  $color: color-contrast($background)
+) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+}
+
+@each $type, $color in $pokemon-types {
   .pokemon-type-#{$type} {
-    color: color-contrast(shade-color($value, $shade-amount)) !important;
-    background-color: shade-color($value, $shade-amount) !important;
-    border: 2px solid;
-    border-color: $value;
-    margin-right: 5px;
-    text-transform: capitalize;
-    font-size: 1rem !important;
+    composes: pokemon-type;
+    @include pokemon-type-variant(shade-color($color, 50%), $color);
   }
 }
