@@ -24,7 +24,7 @@
   @each $type, $color in $pokemon-types {
     &--#{$type} {
       composes: pokemon-type;
-      @include pokemon-type-variant(shade-color($color, 50%), $color);
+      @include pokemon-type-variant(tint-color($color, 50%), $color);
     }
   }
 }

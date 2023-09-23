@@ -14,10 +14,12 @@ export function PokemonList() {
   }
 
   return (
-    <>
+    <div className="row">
       {data.results.map((resource, index) => (
-        <PokemonCard key={index} name={resource.name} />
+        <div className="col-6 mb-3" key={index}>
+          <PokemonCard name={resource.name} />
+        </div>
       ))}
-    </>
+    </div>
   );
 }

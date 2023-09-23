@@ -12,7 +12,8 @@
   &__id {
     font-size: $h4-font-size;
     font-weight: $font-weight-medium;
-    background-color: #f0501e;
+    background-color: #ce3f13;
+    color: color-contrast(#ce3f13);
     clip-path: polygon(0 0, 100% 0%, calc(100% - 25px) 100%, 0 100%);
     flex: 0 0 auto;
     width: 40%;
@@ -53,7 +54,7 @@
     font-size: $h4-font-size;
     font-weight: $font-weight-medium;
     background-color: #dbdbd9;
-    color: $black;
+    color: color-contrast(#dbdbd9);
     clip-path: polygon(0 0, 100% 0%, calc(100% - 25px) 100%, 0 100%);
     flex: 0 0 auto;
     width: 40%;
