@@ -5,5 +5,5 @@ interface PokemonTypeProps {
 }
 
 export default function PokemonType({ type }: PokemonTypeProps) {
-  return <span className={styles[`pokemon-type-${type}`]}>{type}</span>;
+  return <span className={styles[`pokemon-type--${type}`]}>{type}</span>;
 }
