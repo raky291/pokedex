@@ -5,15 +5,11 @@ https://github.com/alexander-elgin/atomic-react-redux
 https://dev.to/raaynaldo/rtk-query-tutorial-crud-51hl
 https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-learned
 
-add header and footer
-add react router
-add pages (about)
-add bootstrap
-add atomic design
-
-update card component
-pagination / infinite scroll
-axios
-clean types
-error handler
-publish
+- cambiar la estructura del card
+- mostrar mas cards por row
+- agregar mas espacio en el title
+- mejorar el header
+- pagination / infinite scroll?
+- usar una librería con types
+- axios
+- error handler?

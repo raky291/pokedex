@@ -1,16 +1,16 @@
 import { Outlet } from "react-router-dom";
+import Content from "../Content/Content";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import Main from "../Main/Main";
 
 export default function Layout() {
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Header />
-      <Main>
+      <Content>
         <Outlet />
-      </Main>
+      </Content>
       <Footer />
-    </>
+    </div>
   );
 }
