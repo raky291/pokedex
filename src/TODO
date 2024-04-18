@@ -5,11 +5,16 @@ https://github.com/alexander-elgin/atomic-react-redux
 https://dev.to/raaynaldo/rtk-query-tutorial-crud-51hl
 https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-learned
 
-- cambiar la estructura del card
-- mostrar mas cards por row
 - agregar mas espacio en el title
 - mejorar el header
+- organizar folder structure
+
+- cambiar la estructura del card
+- mostrar mas cards por row
 - pagination / infinite scroll?
 - usar una librería con types
-- axios
-- error handler?
+- axios? y error handler?
+- borrar counter y app folder
+
+https://borstch.com/snippet/customizing-rtk-query-api-with-createapi
+https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery

@@ -1,4 +1,4 @@
-import { useGetPokemonListQuery } from "../../../api/poke-api";
+import { useGetPokemonListQuery } from "../../../services/pokemon-api";
 import Loading from "../../atoms/Loading/Loading";
 import { PokemonCard } from "../../molecules/PokemonCard/PokemonCard";
 
