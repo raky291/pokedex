@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import { useGetPokemonQuery } from "../../../services/pokemon-api";
+import { useGetPokemonQuery } from "../../../services/pokemonApi";
 import Card from "../../atoms/Card/Card";
 import Loading from "../../atoms/Loading/Loading";
 import PokemonType from "../../atoms/PokemonType/PokemonType";
