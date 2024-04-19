@@ -8,11 +8,11 @@ https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-l
 - agregar mas espacio en el title
 - mejorar el header
 - organizar folder structure
+- usar una librería con types
 
 - cambiar la estructura del card
 - mostrar mas cards por row
 - pagination / infinite scroll?
-- usar una librería con types
 - axios? y error handler?
 - borrar counter y app folder
 

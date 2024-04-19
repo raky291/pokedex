@@ -1,31 +1,16 @@
-import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { NamedAPIResourceList, Pokemon, PokemonClient } from "pokenode-ts";
-
-const api = new PokemonClient();
+import { createApi } from "@reduxjs/toolkit/query/react";
+import { NamedAPIResourceList, Pokemon } from "pokenode-ts";
+import { pokemonBaseQuery } from "./pokemonBaseQuery";
 
 export const pokemonApi = createApi({
   reducerPath: "pokemonApi",
-  baseQuery: fakeBaseQuery(),
+  baseQuery: pokemonBaseQuery(),
   endpoints: (builder) => ({
     getPokemonList: builder.query<NamedAPIResourceList, void>({
-      queryFn: async () => {
-        try {
-          const data = await api.listPokemons();
-          return { data };
-        } catch (error) {
-          return { error };
-        }
-      },
+      query: () => async (api) => await api.listPokemons(),
     }),
     getPokemon: builder.query<Pokemon, string>({
-      queryFn: async (name) => {
-        try {
-          const data = await api.getPokemonByName(name);
-          return { data };
-        } catch (error) {
-          return { error };
-        }
-      },
+      query: (name) => async (api) => await api.getPokemonByName(name),
     }),
   }),
 });
