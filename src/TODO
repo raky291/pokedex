@@ -9,9 +9,13 @@ https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-l
 - mejorar el header
 - organizar folder structure
 - usar una librería con types
+- mostrar mas cards por row
 
 - cambiar la estructura del card
-- mostrar mas cards por row
+- definir la altura y ancho de la tarjeta
+- cambiar de grid a flex las cards?
+- usar classnames en loading?
+
 - pagination / infinite scroll?
 - axios? y error handler?
 - borrar counter y app folder

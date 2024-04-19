@@ -4,8 +4,10 @@ interface ContentProps {
 
 export default function Content({ children }: ContentProps) {
   return (
-    <main className="bg-body-secondary flex-grow-1">
-      <div className="container py-4">{children}</div>
+    <main className="bg-body-secondary d-flex flex-column flex-grow-1">
+      <div className="container d-flex flex-column flex-grow-1 py-4">
+        {children}
+      </div>
     </main>
   );
 }

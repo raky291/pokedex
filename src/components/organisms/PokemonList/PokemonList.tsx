@@ -14,9 +14,9 @@ export function PokemonList() {
   }
 
   return (
-    <div className="row">
+    <div className="row row-cols-4">
       {data.results.map((resource, index) => (
-        <div className="col-6 mb-3" key={index}>
+        <div key={index} className="col mb-3">
           <PokemonCard name={resource.name} />
         </div>
       ))}

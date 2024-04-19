@@ -15,7 +15,7 @@ export function PokemonCard({ name }: PokemonCardProps) {
   const { isLoading, data } = useGetPokemonQuery(name);
 
   if (isLoading) {
-    return <Loading />;
+    return <Loading style={{ height: "284px" }} />;
   }
 
   if (!data) {
