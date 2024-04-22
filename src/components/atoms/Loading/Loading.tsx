@@ -1,11 +1,20 @@
+import classNames from "classnames";
+
 interface LoadingProps {
+  className?: string;
   style?: React.CSSProperties;
 }
 
-export default function Loading({ style }: LoadingProps) {
+export default function Loading({ className, style }: LoadingProps) {
   return (
     <div
-      className="d-flex align-items-center justify-content-center flex-grow-1"
+      className={classNames(
+        "d-flex",
+        "align-items-center",
+        "justify-content-center",
+        "flex-grow-1",
+        className
+      )}
       style={style}
     >
       <div className="spinner-border" role="status">
