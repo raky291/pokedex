@@ -5,7 +5,7 @@ interface ContentProps {
 export default function Content({ children }: ContentProps) {
   return (
     <main className="bg-body-secondary d-flex flex-column flex-grow-1">
-      <div className="container d-flex flex-column flex-grow-1 py-4">
+      <div className="container-xxl d-flex flex-column flex-grow-1 py-4">
         {children}
       </div>
     </main>

@@ -5,16 +5,8 @@ https://github.com/alexander-elgin/atomic-react-redux
 https://dev.to/raaynaldo/rtk-query-tutorial-crud-51hl
 https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-learned
 
-- agregar mas espacio en el title
-- mejorar el header
-- organizar folder structure
-- usar una librería con types
-- mostrar mas cards por row
-
-- cambiar la estructura del card
-- definir la altura y ancho de la tarjeta
-- cambiar de grid a flex las cards?
-- usar classnames en loading?
+- cambiar la estructura del card (actualizar el componente)
+- mover pokemon type a molecules
 
 - pagination / infinite scroll?
 - axios? y error handler?
@@ -22,3 +14,4 @@ https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-l
 
 https://borstch.com/snippet/customizing-rtk-query-api-with-createapi
 https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery
+https://stackoverflow.com/questions/72530121/rtk-query-infinite-scrolling-retaining-existing-data
