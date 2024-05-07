@@ -5,12 +5,14 @@ https://github.com/alexander-elgin/atomic-react-redux
 https://dev.to/raaynaldo/rtk-query-tutorial-crud-51hl
 https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-learned
 
-- cambiar la estructura del card (actualizar el componente)
-- mover pokemon type a molecules
-
+- actualizar pokemon type
 - pagination / infinite scroll?
 - axios? y error handler?
 - borrar counter y app folder
+
+- modo light y dark
+- detalles del pokemon (nueva pagina)
+- publicarlo en google store
 
 https://borstch.com/snippet/customizing-rtk-query-api-with-createapi
 https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery

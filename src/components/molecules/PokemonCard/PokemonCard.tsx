@@ -1,50 +1,34 @@
-import classNames from "classnames/bind";
 import { useGetPokemonQuery } from "../../../services/pokemonApi";
-import Card from "../../atoms/Card/Card";
-import Loading from "../../atoms/Loading/Loading";
+import { pad } from "../../../utils/pad";
 import PokemonType from "../../atoms/PokemonType/PokemonType";
-import styles from "./PokemonCard.module.scss";
-
-const cx = classNames.bind(styles);
 
 interface PokemonCardProps {
   name: string;
 }
 
-export function PokemonCard({ name }: PokemonCardProps) {
-  const { isLoading, data } = useGetPokemonQuery(name);
-
-  if (isLoading) {
-    return <Loading style={{ height: "284px" }} />;
-  }
+export default function PokemonCard({ name }: PokemonCardProps) {
+  const { data } = useGetPokemonQuery(name);
 
   if (!data) {
     return null;
   }
 
   return (
-    <Card>
-      <div className={cx("pokemon-card")}>
-        <div className={cx("pokemon-card__header")}>
-          <div className={cx("pokemon-card__id")}>No. {data.id}</div>
-          <div className={cx("pokemon-card__name")}>{data.name}</div>
-        </div>
-        <div className={cx("pokemon-card__sprites")}>
-          <img
-            className={cx("pokemon-card__image")}
-            src={data.sprites.front_default!}
-            alt={data.name}
-          />
-        </div>
-        <div className={cx("pokemon-card__types")}>
-          <div className={cx("pokemon-card__title")}>Type</div>
-          <div className={cx("pokemon-card__value")}>
-            {data.types.map(({ type }, index) => (
-              <PokemonType key={index} type={type.name} />
-            ))}
-          </div>
+    <div className="card shadow-sm">
+      <img
+        className="card-img-top bg-dark-subtle"
+        src={data.sprites.other?.["official-artwork"].front_default!}
+        alt={data.name}
+      />
+      <div className="card-body">
+        <div className="small text-secondary-emphasis">N.º {pad(data.id)}</div>
+        <div className="fs-3 mb-2 text-capitalize">{data.name}</div>
+        <div className="d-flex gap-2">
+          {data.types.map(({ type }, index) => (
+            <PokemonType key={index} type={type.name} />
+          ))}
         </div>
       </div>
-    </Card>
+    </div>
   );
 }

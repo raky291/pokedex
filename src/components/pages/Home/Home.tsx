@@ -1,4 +1,4 @@
-import { PokemonList } from "../../organisms/PokemonList/PokemonList";
+import PokemonList from "../../organisms/PokemonList/PokemonList";
 
 export default function Home() {
   return (
