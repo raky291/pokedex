@@ -1,4 +1,4 @@
-import { useGetPokemonQuery } from "../../../services/pokemonApi";
+import { useGetPokemonQuery } from "../../../services/pokemonApiSlice";
 import { pad } from "../../../utils/pad";
 import PokemonType from "../../atoms/PokemonType/PokemonType";
 

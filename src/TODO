@@ -5,15 +5,22 @@ https://github.com/alexander-elgin/atomic-react-redux
 https://dev.to/raaynaldo/rtk-query-tutorial-crud-51hl
 https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-learned
 
-- actualizar pokemon type
-- pagination / infinite scroll?
-- axios? y error handler?
-- borrar counter y app folder
+- pagination (crear componente)
+- actualizar pokemon type (colores y diseño)
+- borrar folder counter y app folder (mover hooks)
 
+- placeholder para la tarjeta?
 - modo light y dark
-- detalles del pokemon (nueva pagina)
+- detalles del pokemon (nueva pagina) v3?
 - publicarlo en google store
 
 https://borstch.com/snippet/customizing-rtk-query-api-with-createapi
 https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery
 https://stackoverflow.com/questions/72530121/rtk-query-infinite-scrolling-retaining-existing-data
+https://redux-toolkit.js.org/rtk-query/usage/pagination
+
+// const isSomeQueryPending = useAppSelector((state) =>
+// Object.values(state.pokemonApi.queries).some(
+// (query) => query?.status === "pending"
+// )
+// );

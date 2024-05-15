@@ -1,21 +1,23 @@
-import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
-import counterReducer from "../counter/counterSlice";
-import { pokemonApi } from "../services/pokemonApi";
+import type { Action, ThunkAction } from "@reduxjs/toolkit";
+import { combineSlices, configureStore } from "@reduxjs/toolkit";
+import { pokemonApiSlice } from "../services/pokemonApiSlice";
+import { paginationSlice } from "./slices/paginationSlice";
+
+const rootReducer = combineSlices(paginationSlice, pokemonApiSlice);
+
+export type RootState = ReturnType<typeof rootReducer>;
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-    [pokemonApi.reducerPath]: pokemonApi.reducer,
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat(pokemonApiSlice.middleware);
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(pokemonApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
+export type AppThunk<ThunkReturnType = void> = ThunkAction<
+  ThunkReturnType,
   RootState,
   unknown,
-  Action<string>
+  Action
 >;

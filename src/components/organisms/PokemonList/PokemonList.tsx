@@ -1,9 +1,12 @@
-import { useGetPokemonListQuery } from "../../../services/pokemonApi";
+import { useGetPokemonListQuery } from "../../../services/pokemonApiSlice";
+import { useAppSelector } from "../../../store/hooks";
+import { selectPagination } from "../../../store/slices/paginationSlice";
 import Loading from "../../atoms/Loading/Loading";
 import PokemonCard from "../../molecules/PokemonCard/PokemonCard";
 
 export default function PokemonList() {
-  const { isLoading, data } = useGetPokemonListQuery();
+  const { offset, limit } = useAppSelector(selectPagination);
+  const { isLoading, data } = useGetPokemonListQuery({ offset, limit });
 
   if (isLoading) {
     return <Loading />;
