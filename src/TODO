@@ -18,6 +18,8 @@ https://borstch.com/snippet/customizing-rtk-query-api-with-createapi
 https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery
 https://stackoverflow.com/questions/72530121/rtk-query-infinite-scrolling-retaining-existing-data
 https://redux-toolkit.js.org/rtk-query/usage/pagination
+https://s3-alpha.figma.com/hub/file/4896329398/ac283dec-17a5-4da6-b99a-89374b8c6aae-cover.png
+https://www.delldesignsystem.com/components/pagination/
 
 // const isSomeQueryPending = useAppSelector((state) =>
 // Object.values(state.pokemonApi.queries).some(

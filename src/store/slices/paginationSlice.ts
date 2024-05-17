@@ -1,6 +1,3 @@
-//offset?: number | undefined, limit?: number | undefined
-//src\store\slices\paginationSlice.ts
-
 import { createSlice } from "@reduxjs/toolkit";
 
 interface PaginationState {
