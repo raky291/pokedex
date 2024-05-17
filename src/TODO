@@ -7,12 +7,12 @@ https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-l
 
 - pagination (crear componente)
 - actualizar pokemon type (colores y diseño)
-- borrar folder counter y app folder (mover hooks)
-
-- placeholder para la tarjeta?
-- modo light y dark
-- detalles del pokemon (nueva pagina) v3?
+- migrar a mui
 - publicarlo en google store
+
+- dark mode v3
+- detalles del pokemon (nueva pagina) v3
+- placeholder para la tarjeta v3
 
 https://borstch.com/snippet/customizing-rtk-query-api-with-createapi
 https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery
@@ -20,6 +20,7 @@ https://stackoverflow.com/questions/72530121/rtk-query-infinite-scrolling-retain
 https://redux-toolkit.js.org/rtk-query/usage/pagination
 https://s3-alpha.figma.com/hub/file/4896329398/ac283dec-17a5-4da6-b99a-89374b8c6aae-cover.png
 https://www.delldesignsystem.com/components/pagination/
+https://github.com/twbs/bootstrap/issues/38748
 
 // const isSomeQueryPending = useAppSelector((state) =>
 // Object.values(state.pokemonApi.queries).some(
