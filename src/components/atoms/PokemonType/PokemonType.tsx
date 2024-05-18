@@ -1,9 +1,7 @@
-import styles from "./PokemonType.module.scss";
-
 interface PokemonTypeProps {
-  type: string;
+  name: string;
 }
 
-export default function PokemonType({ type }: PokemonTypeProps) {
-  return <span className={styles[`pokemon-type--${type}`]}>{type}</span>;
+export default function PokemonType({ name }: PokemonTypeProps) {
+  return <span>{name}</span>;
 }

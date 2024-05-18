@@ -25,7 +25,7 @@ export default function PokemonCard({ name }: PokemonCardProps) {
         <div className="fs-3 mb-2 text-capitalize">{data.name}</div>
         <div className="d-flex gap-2">
           {data.types.map(({ type }, index) => (
-            <PokemonType key={index} type={type.name} />
+            <PokemonType key={index} name={type.name} />
           ))}
         </div>
       </div>

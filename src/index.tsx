@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
+import { Provider as StoreProvider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { router } from "./router/router";
 import { store } from "./store/store";
-import "./styles/main.scss";
+import "./theme/roboto";
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container!);
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <StoreProvider store={store}>
       <RouterProvider router={router} />
-    </Provider>
+    </StoreProvider>
   </React.StrictMode>
 );
 
