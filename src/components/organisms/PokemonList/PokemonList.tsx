@@ -1,3 +1,4 @@
+import { Unstable_Grid2 as Grid } from "@mui/material";
 import { useGetPokemonListQuery } from "../../../services/pokemonApiSlice";
 import { useAppSelector } from "../../../store/hooks";
 import { selectPagination } from "../../../store/slices/paginationSlice";
@@ -17,12 +18,12 @@ export default function PokemonList() {
   }
 
   return (
-    <div className="grid gap-3">
+    <Grid container spacing={2}>
       {data.results.map((resource, index) => (
-        <div key={index} className="g-col-12 g-col-sm-6 g-col-md-4 g-col-lg-3">
+        <Grid key={index} xs={12} sm={6} md={4} lg={3}>
           <PokemonCard name={resource.name} />
-        </div>
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 }

@@ -1,9 +1,14 @@
+import { Box, Container, Divider, Typography } from "@mui/material";
+
 export default function Footer() {
   return (
-    <footer className="border-top shadow-sm z-1">
-      <div className="container-xxl text-center text-body-secondary py-4">
-        © Alejandro López Almeida
-      </div>
-    </footer>
+    <Box component="footer" sx={{ mt: 3 }}>
+      <Divider variant="middle" />
+      <Container maxWidth="xl" sx={{ py: 3 }}>
+        <Typography variant="body2" align="center" color="text.secondary">
+          © Alejandro López Almeida
+        </Typography>
+      </Container>
+    </Box>
   );
 }

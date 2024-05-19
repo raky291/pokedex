@@ -1,13 +1,22 @@
+import { Container } from "@mui/material";
+
 interface ContentProps {
   children?: React.ReactNode;
 }
 
 export default function Content({ children }: ContentProps) {
   return (
-    <main className="bg-body-secondary d-flex flex-column flex-grow-1">
-      <div className="container-xxl d-flex flex-column flex-grow-1 py-4">
-        {children}
-      </div>
-    </main>
+    <Container
+      component="main"
+      maxWidth="xl"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        flexGrow: 1,
+        py: 3,
+      }}
+    >
+      {children}
+    </Container>
   );
 }

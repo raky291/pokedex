@@ -5,14 +5,16 @@ https://github.com/alexander-elgin/atomic-react-redux
 https://dev.to/raaynaldo/rtk-query-tutorial-crud-51hl
 https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-learned
 
+- fix loading component
 - pagination (crear componente)
 - actualizar pokemon type (colores y diseño)
-- migrar a mui
 - publicarlo en google store
 
 - dark mode v3
-- detalles del pokemon (nueva pagina) v3
 - placeholder para la tarjeta v3
+- arreglar espacios
+
+- detalles del pokemon (nueva pagina) v4
 
 https://borstch.com/snippet/customizing-rtk-query-api-with-createapi
 https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#axios-basequery
