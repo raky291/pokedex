@@ -1,9 +1,9 @@
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import { darkTheme } from "../../../theme/theme";
-import Content from "../../templates/Content/Content";
 import Footer from "../../templates/Footer/Footer";
 import Header from "../../templates/Header/Header";
+import Main from "../../templates/Main/Main";
 
 export default function Root() {
   return (
@@ -17,9 +17,9 @@ export default function Root() {
         }}
       >
         <Header />
-        <Content>
+        <Main>
           <Outlet />
-        </Content>
+        </Main>
         <Footer />
       </Box>
     </ThemeProvider>

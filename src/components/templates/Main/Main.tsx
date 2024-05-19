@@ -1,10 +1,10 @@
 import { Container } from "@mui/material";
 
-interface ContentProps {
+interface MainProps {
   children?: React.ReactNode;
 }
 
-export default function Content({ children }: ContentProps) {
+export default function Main({ children }: MainProps) {
   return (
     <Container
       component="main"
