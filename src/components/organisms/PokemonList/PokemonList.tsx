@@ -7,9 +7,9 @@ import PokemonCard from "../../molecules/PokemonCard/PokemonCard";
 
 export default function PokemonList() {
   const { offset, limit } = useAppSelector(selectPagination);
-  const { isLoading, data } = useGetPokemonListQuery({ offset, limit });
+  const { isFetching, data } = useGetPokemonListQuery({ offset, limit });
 
-  if (isLoading) {
+  if (isFetching) {
     return <Loading />;
   }
 

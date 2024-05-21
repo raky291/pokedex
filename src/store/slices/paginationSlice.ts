@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface PaginationState {
   offset: number;
@@ -20,12 +20,16 @@ export const paginationSlice = createSlice({
     nextPage: create.reducer((state) => {
       state.offset += state.limit;
     }),
+    setLimit: create.reducer((state, action: PayloadAction<number>) => {
+      state.limit = action.payload;
+      state.offset = initialState.offset;
+    }),
   }),
   selectors: {
     selectPagination: (pagination) => pagination,
   },
 });
 
-export const { previousPage, nextPage } = paginationSlice.actions;
+export const { previousPage, nextPage, setLimit } = paginationSlice.actions;
 
 export const { selectPagination } = paginationSlice.selectors;

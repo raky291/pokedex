@@ -5,7 +5,6 @@ https://github.com/alexander-elgin/atomic-react-redux
 https://dev.to/raaynaldo/rtk-query-tutorial-crud-51hl
 https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-learned
 
-- fix loading component
 - pagination (crear componente)
 - actualizar pokemon type (colores y diseño)
 - publicarlo en google store
@@ -22,7 +21,6 @@ https://stackoverflow.com/questions/72530121/rtk-query-infinite-scrolling-retain
 https://redux-toolkit.js.org/rtk-query/usage/pagination
 https://s3-alpha.figma.com/hub/file/4896329398/ac283dec-17a5-4da6-b99a-89374b8c6aae-cover.png
 https://www.delldesignsystem.com/components/pagination/
-https://github.com/twbs/bootstrap/issues/38748
 
 // const isSomeQueryPending = useAppSelector((state) =>
 // Object.values(state.pokemonApi.queries).some(
