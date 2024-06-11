@@ -1,10 +1,10 @@
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import {
   Button,
+  Unstable_Grid2 as Grid,
   MenuItem,
   Select,
   SelectChangeEvent,
-  Toolbar,
   Typography,
 } from "@mui/material";
 import { useGetPokemonListQuery } from "../../../services/pokemonApiSlice";
@@ -15,6 +15,7 @@ import {
   selectPagination,
   setLimit,
 } from "../../../store/slices/paginationSlice";
+import { isNil } from "../../../utils/isNil";
 import { pad } from "../../../utils/pad";
 
 export default function Pagination() {
@@ -22,72 +23,70 @@ export default function Pagination() {
   const { offset, limit } = useAppSelector(selectPagination);
   const { data } = useGetPokemonListQuery({ offset, limit });
 
-  // const x = data?.previous == null;
-  // const y = data?.next == null;
+  const isPreviousPageDisabled = isNil(data?.previous);
+  const isNextPageDisabled = isNil(data?.next);
 
-  const a = (event: SelectChangeEvent<number>) => {
+  const handleLimitChange = (event: SelectChangeEvent<number>) => {
     dispatch(setLimit(event.target.value as number));
   };
 
-  const b = () => {
+  const handlePreviousPageClick = () => {
     dispatch(previousPage());
   };
 
-  const c = () => {
+  const handleNextPageClick = () => {
     dispatch(nextPage());
   };
 
-  // return (
-  //   <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-  //     <Box sx={{ display: "flex", alignItems: "center" }}>
-  //       <Typography></Typography>
-  //       <Select variant="standard" value={limit} onChange={handleChange}>
-  //         <MenuItem value={20}>20</MenuItem>
-  //         <MenuItem value={60}>60</MenuItem>
-  //         <MenuItem value={100}>100</MenuItem>
-  //       </Select>
-  //     </Box>
-  //     <Box sx={{ display: "flex", alignItems: "center" }}>
-  //       <Typography>
-  //
-  //       </Typography>
-  //       <Box>
-  //         <IconButton onClick={handlePreviousClick} disabled={x}>
-  //           <KeyboardArrowLeft />
-  //         </IconButton>
-  //         <IconButton onClick={handleNextClick} disabled={y}>
-  //           <KeyboardArrowRight />
-  //         </IconButton>
-  //       </Box>
-  //     </Box>
-  //   </Toolbar>
-  // );
-
   return (
-    <Toolbar disableGutters>
-      <Typography>Items per page</Typography>
-      <Select size="small" value={limit}>
-        <MenuItem value={20}>20</MenuItem>
-        <MenuItem value={60}>60</MenuItem>
-        <MenuItem value={100}>100</MenuItem>
-      </Select>
-      <Typography>
-        N.º {pad(offset + 1)} – {pad(offset + limit)}
-      </Typography>
-      <Button
-        variant="outlined"
-        color="inherit"
-        startIcon={<KeyboardArrowLeft />}
+    <Grid container spacing={2}>
+      <Grid xs="auto" display="flex" alignItems="center">
+        <Typography>Items per page</Typography>
+        <Select
+          size="small"
+          value={limit}
+          onChange={handleLimitChange}
+          sx={{ ml: 1 }}
+        >
+          <MenuItem value={20}>20</MenuItem>
+          <MenuItem value={60}>60</MenuItem>
+          <MenuItem value={100}>100</MenuItem>
+        </Select>
+      </Grid>
+      <Grid
+        xs
+        sm="auto"
+        smOffset="auto"
+        display="flex"
+        alignItems="center"
+        justifyContent="flex-end"
       >
-        Back
-      </Button>
-      <Button
-        variant="outlined"
-        color="inherit"
-        endIcon={<KeyboardArrowRight />}
-      >
-        Next
-      </Button>
-    </Toolbar>
+        <Typography>
+          N.º {pad(offset + 1)} – N.º {pad(offset + limit)}
+        </Typography>
+      </Grid>
+      <Grid xs={12} sm="auto" display="flex" alignItems="center">
+        <Button
+          variant="outlined"
+          color="inherit"
+          startIcon={<KeyboardArrowLeft />}
+          onClick={handlePreviousPageClick}
+          disabled={isPreviousPageDisabled}
+          sx={{ flex: "auto" }}
+        >
+          Back
+        </Button>
+        <Button
+          variant="outlined"
+          color="inherit"
+          endIcon={<KeyboardArrowRight />}
+          onClick={handleNextPageClick}
+          disabled={isNextPageDisabled}
+          sx={{ flex: "auto", ml: 1 }}
+        >
+          Next
+        </Button>
+      </Grid>
+    </Grid>
   );
 }
