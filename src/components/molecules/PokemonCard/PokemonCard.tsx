@@ -1,6 +1,7 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { useGetPokemonQuery } from "../../../services/pokemonApiSlice";
 import { pad } from "../../../utils/pad";
+import PokemonType from "../../atoms/PokemonType/PokemonType";
 
 interface PokemonCardProps {
   name: string;
@@ -32,6 +33,11 @@ export default function PokemonCard({ name }: PokemonCardProps) {
         >
           {data.name}
         </Typography>
+        <Box sx={{ display: "flex", gap: 1, mb: 1 }}>
+          {data.types.map(({ type }, index) => (
+            <PokemonType key={index} name={type.name} />
+          ))}
+        </Box>
       </CardContent>
     </Card>
   );
