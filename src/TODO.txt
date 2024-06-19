@@ -5,13 +5,16 @@ https://github.com/alexander-elgin/atomic-react-redux
 https://dev.to/raaynaldo/rtk-query-tutorial-crud-51hl
 https://redux.js.org/tutorials/essentials/part-8-rtk-query-advanced#what-youve-learned
 
-- pagination (crear componente)
-- actualizar pokemon type (colores y diseño)
-- publicarlo en google store
+- actualizar folder structure
+- dark mode
+- multiple language
+- pwa
+- agregar seo
+- publicarlo en github
 
-- dark mode v3
+- publicarlo en google store v3
 - placeholder para la tarjeta v3
-- arreglar espacios
+- mejorar UI
 
 - detalles del pokemon (nueva pagina) v4
 
@@ -28,45 +31,6 @@ https://www.delldesignsystem.com/components/pagination/
 // )
 // );
 
-// const colours = {
-// normal: "#A8A77A",
-// fire: "#EE8130",
-// water: "#6390F0",
-// electric: "#F7D02C",
-// grass: "#7AC74C",
-// ice: "#96D9D6",
-// fighting: "#C22E28",
-// poison: "#A33EA1",
-// ground: "#E2BF65",
-// flying: "#A98FF3",
-// psychic: "#F95587",
-// bug: "#A6B91A",
-// rock: "#B6A136",
-// ghost: "#735797",
-// dragon: "#6F35FC",
-// dark: "#705746",
-// steel: "#B7B7CE",
-// fairy: "#D685AD",
-// };
-
-// Normal Type: A8A77A
-// Fire Type: EE8130
-// Water Type: 6390F0
-// Electric Type: F7D02C
-// Grass Type: 7AC74C
-// Ice Type: 96D9D6
-// Fighting Type: C22E28
-// Poison Type: A33EA1
-// Ground Type: E2BF65
-// Flying Type: A98FF3
-// Psychic Type: F95587
-// Bug Type: A6B91A
-// Rock Type: B6A136
-// Ghost Type: 735797
-// Dragon Type: 6F35FC
-// Dark Type: 705746
-// Steel Type: B7B7CE
-// Fairy Type: D685AD
-
 // https://www.reddit.com/r/pokemon/comments/14m5v1b/colour_of_each_pok%C3%A9mon_type_in_every_game_oc/?rdt=47005
 // https://stackoverflow.com/questions/67766554/mui-function-to-change-color-to-either-black-or-with-in-regard-to-blackground-co
+// https://github.com/juliencrn/usehooks-ts/blob/master/packages/usehooks-ts/src/useLocalStorage/useLocalStorage.ts
