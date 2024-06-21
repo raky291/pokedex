@@ -1,9 +1,9 @@
+import Loading from "@/components/atoms/Loading";
+import PokemonCard from "@/components/molecules/PokemonCard";
+import { useGetPokemonListQuery } from "@/services/pokemonApiSlice";
+import { useAppSelector } from "@/store/hooks";
+import { selectPagination } from "@/store/slices/paginationSlice";
 import { Unstable_Grid2 as Grid } from "@mui/material";
-import { useGetPokemonListQuery } from "../../../services/pokemonApiSlice";
-import { useAppSelector } from "../../../store/hooks";
-import { selectPagination } from "../../../store/slices/paginationSlice";
-import Loading from "../../atoms/Loading/Loading";
-import PokemonCard from "../../molecules/PokemonCard/PokemonCard";
 
 export default function PokemonList() {
   const { offset, limit } = useAppSelector(selectPagination);

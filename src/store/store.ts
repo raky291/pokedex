@@ -1,6 +1,6 @@
+import { pokemonApiSlice } from "@/services/pokemonApiSlice";
 import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
-import { pokemonApiSlice } from "../services/pokemonApiSlice";
 import { appSlice } from "./slices/appSlice";
 import { paginationSlice } from "./slices/paginationSlice";
 

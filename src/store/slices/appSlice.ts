@@ -1,6 +1,6 @@
+import { getItem, setItem } from "@/utils/localStorage";
 import { PaletteMode } from "@mui/material";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { getItem, setItem } from "../../utils/localStorage";
 
 interface AppState {
   mode: PaletteMode;

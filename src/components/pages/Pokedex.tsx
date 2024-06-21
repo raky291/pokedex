@@ -1,6 +1,6 @@
+import Pagination from "@/components/organisms/Pagination";
+import PokemonList from "@/components/organisms/PokemonList";
 import { Box, Typography } from "@mui/material";
-import Pagination from "../../organisms/Pagination/Pagination";
-import PokemonList from "../../organisms/PokemonList/PokemonList";
 
 export default function Pokedex() {
   return (

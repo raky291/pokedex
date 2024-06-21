@@ -1,3 +1,13 @@
+import { useGetPokemonListQuery } from "@/services/pokemonApiSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import {
+  nextPage,
+  previousPage,
+  selectPagination,
+  setLimit,
+} from "@/store/slices/paginationSlice";
+import { isNil } from "@/utils/isNil";
+import { pad } from "@/utils/pad";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import {
   Button,
@@ -7,16 +17,6 @@ import {
   SelectChangeEvent,
   Typography,
 } from "@mui/material";
-import { useGetPokemonListQuery } from "../../../services/pokemonApiSlice";
-import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import {
-  nextPage,
-  previousPage,
-  selectPagination,
-  setLimit,
-} from "../../../store/slices/paginationSlice";
-import { isNil } from "../../../utils/isNil";
-import { pad } from "../../../utils/pad";
 
 export default function Pagination() {
   const dispatch = useAppDispatch();

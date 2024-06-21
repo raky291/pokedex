@@ -1,7 +1,7 @@
+import PokemonType from "@/components/atoms/PokemonType";
+import { useGetPokemonQuery } from "@/services/pokemonApiSlice";
+import { pad } from "@/utils/pad";
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { useGetPokemonQuery } from "../../../services/pokemonApiSlice";
-import { pad } from "../../../utils/pad";
-import PokemonType from "../../atoms/PokemonType/PokemonType";
 
 interface PokemonCardProps {
   name: string;

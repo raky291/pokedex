@@ -1,5 +1,5 @@
+import { typeColor } from "@/utils/typeColor";
 import { styled } from "@mui/material/styles";
-import { typeColor } from "../../../utils/typeColor";
 
 interface PokemonTypeProps {
   name: string;
