@@ -1,5 +1,7 @@
 import { Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
-  return <Typography variant="h1">Hello World</Typography>;
+  const t = useTranslations("home");
+  return <Typography variant="h1">{t("hello")}</Typography>;
 }
