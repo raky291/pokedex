@@ -1,5 +1,18 @@
 {
-  "home": {
-    "hello": "Hello World"
+  "app": {
+    "header": {
+      "pokedex": "Pokédex"
+    },
+    "footer": {
+      "copyright": "© Alejandro López Almeida"
+    }
+  },
+  "pokedex": {
+    "pokemonCard": {
+      "number": "N.º {id, number, ::0000 ,_}"
+    },
+    "page": {
+      "heading": "Pokédex"
+    }
   }
 }

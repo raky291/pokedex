@@ -1,5 +1,15 @@
 {
-  "cSpell.words": ["latin", "nextjs", "pokedex", "roboto"],
+  "cSpell.words": [
+    "almeida",
+    "esnext",
+    "latin",
+    "nextjs",
+    "parens",
+    "pokedex",
+    "pokédex",
+    "pokemon",
+    "roboto"
+  ],
   "editor.codeActionsOnSave": { "source.organizeImports": "always" },
   "editor.formatOnSave": true
 }

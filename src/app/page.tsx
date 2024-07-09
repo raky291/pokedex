@@ -1,7 +1,5 @@
-import { Typography } from "@mui/material";
-import { useTranslations } from "next-intl";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  const t = useTranslations("home");
-  return <Typography variant="h1">{t("hello")}</Typography>;
+export default function Index() {
+  redirect("/pokedex");
 }
