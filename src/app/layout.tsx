@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
-import I18nClientProvider from "./components/i18n-client-provider";
 import Footer from "./components/layout/footer";
 import Header from "./components/layout/header";
 import Main from "./components/layout/main";
-import MuiThemeProvider from "./components/mui-theme-provider";
+import I18nClientProvider from "./components/providers/i18n-client-provider";
+import MuiThemeProvider from "./components/providers/mui-theme-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
