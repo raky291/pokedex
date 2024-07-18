@@ -1,21 +1,27 @@
+import Image, { ImageSizes } from "@/app/components/ui/image";
 import { getPokemonByName } from "@/app/pokedex/services/pokemon-api";
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import { getTranslations } from "next-intl/server";
 import PokemonType from "./pokemon-type";
 
 export default async function PokemonCard({
   name,
+  sizes,
 }: Readonly<{
   name: string;
+  sizes?: ImageSizes;
 }>) {
   const t = await getTranslations("pokedex.pokemonCard");
   const data = await getPokemonByName(name);
   return (
     <Card>
-      <CardMedia
-        component="img"
-        image={data.sprites.other["official-artwork"].front_default!}
-        title={data.name}
+      <Image
+        src={data.sprites.other["official-artwork"].front_default!}
+        alt={data.name}
+        width={475}
+        height={475}
+        sizes={sizes}
+        responsive
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary" gutterBottom>
