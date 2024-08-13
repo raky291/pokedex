@@ -3,7 +3,7 @@ import createNextIntl from "next-intl/plugin";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    deviceSizes: [599, 899, 1199, 1535],
+    deviceSizes: [600, 900, 1200, 1536],
     remotePatterns: [
       {
         protocol: "https",
