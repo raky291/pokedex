@@ -9,7 +9,8 @@
     "pokedex",
     "pokédex",
     "pokemon",
-    "roboto"
+    "roboto",
+    "typecheck"
   ],
   "editor.codeActionsOnSave": { "source.organizeImports": "always" },
   "editor.formatOnSave": true
