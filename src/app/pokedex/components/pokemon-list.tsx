@@ -2,8 +2,14 @@ import { getPokemonList } from "@/app/pokedex/services/pokemon-api";
 import { Unstable_Grid2 as Grid } from "@mui/material";
 import PokemonCard from "./pokemon-card";
 
-export default async function PokemonList() {
-  const data = await getPokemonList();
+export default async function PokemonList({
+  limit,
+  offset,
+}: Readonly<{
+  limit?: string;
+  offset?: string;
+}>) {
+  const data = await getPokemonList(limit, offset);
   return (
     <Grid container spacing={2}>
       {data.results.map((resource, index) => (
