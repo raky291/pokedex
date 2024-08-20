@@ -5,10 +5,10 @@ import PokemonCard from "./pokemon-card";
 export default async function PokemonList({
   limit,
   offset,
-}: Readonly<{
+}: {
   limit?: string;
   offset?: string;
-}>) {
+}) {
   const data = await getPokemonList(limit, offset);
   return (
     <Grid container spacing={2}>

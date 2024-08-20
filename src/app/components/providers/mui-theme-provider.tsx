@@ -5,9 +5,9 @@ import { ThemeProvider } from "@mui/material/styles";
 
 export default function MuiThemeProvider({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <AppRouterCacheProvider>
       <ThemeProvider theme={theme}>

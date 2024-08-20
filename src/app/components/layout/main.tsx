@@ -1,10 +1,6 @@
 import { Container } from "@mui/material";
 
-export default function Main({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function Main({ children }: { children: React.ReactNode }) {
   return (
     <Container
       component="main"

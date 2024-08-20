@@ -19,6 +19,12 @@ enum TypeColor {
   fairy = "#d685ad",
 }
 
-export function typeColor(name: string) {
-  return TypeColor[name as keyof typeof TypeColor];
+type TypeName = keyof typeof TypeColor;
+
+export function typeColor(name: string): TypeColor | undefined {
+  if (name in TypeColor) {
+    return TypeColor[name as TypeName];
+  }
+
+  return undefined;
 }

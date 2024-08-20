@@ -3,7 +3,7 @@ import { typeColor } from "@/app/pokedex/lib/type-color";
 import { styled } from "@mui/material/styles";
 
 const Wrapper = styled("span")<{
-  backgroundColor: string;
+  backgroundColor?: string;
 }>(({ theme, ...props }) => ({
   backgroundColor: props.backgroundColor,
   borderRadius: theme.shape.borderRadius,
@@ -15,10 +15,6 @@ const Wrapper = styled("span")<{
   width: 90,
 }));
 
-export default function PokemonType({
-  name,
-}: Readonly<{
-  name: string;
-}>) {
+export default function PokemonType({ name }: { name: string }) {
   return <Wrapper backgroundColor={typeColor(name)}>{name}</Wrapper>;
 }

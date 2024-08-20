@@ -82,7 +82,7 @@ export default function Image({
   responsive,
   style,
   ...rest
-}: Readonly<ImageProps>) {
+}: ImageProps) {
   return (
     <NextImage
       sizes={buildSourceSizes(breakpoints, sizes)}

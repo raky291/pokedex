@@ -6,9 +6,9 @@ type SearchParams = { limit?: string; offset?: string };
 
 export default function Pokedex({
   searchParams,
-}: Readonly<{
+}: {
   searchParams: SearchParams;
-}>) {
+}) {
   const { limit, offset } = searchParams;
   const t = useTranslations("pokedex.page");
   return (

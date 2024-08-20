@@ -7,10 +7,10 @@ import PokemonType from "./pokemon-type";
 export default async function PokemonCard({
   name,
   sizes,
-}: Readonly<{
+}: {
   name: string;
   sizes?: ImageSizes;
-}>) {
+}) {
   const t = await getTranslations("pokedex.pokemonCard");
   const data = await getPokemonByName(name);
   return (
