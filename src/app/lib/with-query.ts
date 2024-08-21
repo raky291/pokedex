@@ -1,17 +1,20 @@
 export function withQuery(
   url: string,
-  query?: Record<string, string | undefined>,
+  query?: Record<string, string | string[] | undefined>,
 ): string {
-  const urlObj = new URL(url);
+  const searchParams = new URLSearchParams();
 
   if (query) {
-    for (const key in query) {
-      const value = query[key];
+    Object.entries(query).forEach(([key, value]) => {
       if (value) {
-        urlObj.searchParams.append(key, value);
+        const items = Array.isArray(value) ? value : [value];
+        items.forEach((item) => {
+          searchParams.append(key, item);
+        });
       }
-    }
+    });
   }
 
-  return urlObj.toString();
+  const queryString = searchParams.toString();
+  return queryString ? `${url}?${queryString}` : url;
 }
