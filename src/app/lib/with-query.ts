@@ -1,7 +1,6 @@
-export function withQuery(
-  url: string,
-  query?: Record<string, string | string[] | undefined>,
-): string {
+import { QueryParams } from "./types";
+
+export function withQuery(url: string, query?: QueryParams): string {
   const searchParams = new URLSearchParams();
 
   if (query) {
