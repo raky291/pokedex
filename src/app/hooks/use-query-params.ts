@@ -5,14 +5,14 @@ import { QueryParams, SetQuery } from "../lib/types";
 import { withQuery } from "../lib/with-query";
 
 export function useQueryParams<TQueryParams extends QueryParams>(
-  defaultValues: TQueryParams,
+  defaultValues?: TQueryParams,
 ): [TQueryParams, SetQuery<TQueryParams>] {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const queryParams = useMemo(
-    () => getQueryParams(searchParams),
+    () => getQueryParams(searchParams) as TQueryParams,
     [searchParams],
   );
 
