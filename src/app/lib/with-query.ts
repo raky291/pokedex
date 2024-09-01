@@ -5,10 +5,10 @@ export function withQuery(url: string, query?: QueryParams): string {
 
   if (query) {
     Object.entries(query).forEach(([key, value]) => {
-      if (value) {
-        const items = Array.isArray(value) ? value : [value];
-        items.forEach((item) => {
-          searchParams.append(key, item);
+      if (value !== undefined) {
+        const params = Array.isArray(value) ? value : [value];
+        params.forEach((param) => {
+          searchParams.append(key, param);
         });
       }
     });

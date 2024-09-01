@@ -3,16 +3,16 @@ import { QueryParams } from "./types";
 export function getQueryParams(searchParams: URLSearchParams): QueryParams {
   const query: QueryParams = {};
 
-  searchParams.forEach((value, key) => {
-    const queryValue = query[key];
-    if (queryValue !== undefined) {
-      if (Array.isArray(queryValue)) {
-        query[key] = [...queryValue, value];
+  searchParams.forEach((param, key) => {
+    const value = query[key];
+    if (value !== undefined) {
+      if (Array.isArray(value)) {
+        query[key] = [...value, param];
       } else {
-        query[key] = [queryValue, value];
+        query[key] = [value, param];
       }
     } else {
-      query[key] = value;
+      query[key] = param;
     }
   });
 
