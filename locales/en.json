@@ -8,6 +8,10 @@
     }
   },
   "pokedex": {
+    "pagination": {
+      "previous": "Back",
+      "next": "Next"
+    },
     "pokemonCard": {
       "number": "N.º {id, number, ::0000 ,_}"
     },
