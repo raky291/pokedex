@@ -1,0 +1,17 @@
+{
+  "cSpell.words": [
+    "almeida",
+    "esnext",
+    "latin",
+    "lópez",
+    "nextjs",
+    "parens",
+    "pokedex",
+    "pokédex",
+    "pokemon",
+    "roboto",
+    "typecheck"
+  ],
+  "editor.codeActionsOnSave": { "source.organizeImports": "always" },
+  "editor.formatOnSave": true
+}

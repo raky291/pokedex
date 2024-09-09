@@ -1,0 +1,22 @@
+{
+  "app": {
+    "header": {
+      "pokedex": "Pokédex"
+    },
+    "footer": {
+      "copyright": "Copyright © 2024 - Alejandro López Almeida"
+    }
+  },
+  "pokedex": {
+    "pagination": {
+      "previous": "Back",
+      "next": "Next"
+    },
+    "pokemonCard": {
+      "number": "N.º {id, number, ::0000 ,_}"
+    },
+    "page": {
+      "heading": "Pokédex"
+    }
+  }
+}
