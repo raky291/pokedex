@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { getTranslations } from "next-intl/server";
 import Pagination from "./components/pagination";
 import PokemonList from "./components/pokemon-list";
@@ -15,12 +15,12 @@ export default async function Pokedex({
   const data = await getPokemonList(limit, offset);
   const t = await getTranslations("pokedex.page");
   return (
-    <>
-      <Typography component="h1" variant="h3" gutterBottom>
+    <Stack spacing={2} useFlexGap>
+      <Typography component="h1" variant="h3">
         {t("heading")}
       </Typography>
       <Pagination data={data} />
       <PokemonList data={data} />
-    </>
+    </Stack>
   );
 }

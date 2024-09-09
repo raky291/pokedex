@@ -1,5 +1,6 @@
 import { AppBar, Button, Container, Toolbar } from "@mui/material";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Header() {
   const t = useTranslations("app.header");
@@ -7,7 +8,9 @@ export default function Header() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Button color="inherit">{t("pokedex")}</Button>
+          <Button component={Link} href="/pokedex" color="inherit">
+            {t("pokedex")}
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>

@@ -15,14 +15,16 @@ export default async function PokemonCard({
   const data = await getPokemonByName(name);
   return (
     <Card>
-      <Image
-        src={data.sprites.other["official-artwork"].front_default!}
-        alt={data.name}
-        width={475}
-        height={475}
-        sizes={sizes}
-        responsive
-      />
+      <Box sx={{ aspectRatio: "1 / 1" }}>
+        <Image
+          src={data.sprites.other["official-artwork"].front_default!}
+          alt={data.name}
+          width={475}
+          height={475}
+          sizes={sizes}
+          responsive
+        />
+      </Box>
       <CardContent>
         <Stack spacing={1}>
           <Typography variant="body2" color="text.secondary">

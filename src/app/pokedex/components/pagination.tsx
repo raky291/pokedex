@@ -26,7 +26,7 @@ export default function Pagination({ data }: { data: NamedAPIResourceList }) {
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
+    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
       <Button
         variant="outlined"
         color="inherit"
