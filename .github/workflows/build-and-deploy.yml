@@ -25,7 +25,7 @@ jobs:
           docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:${{ github.sha }}
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/pokedex:${{ github.sha }}
 
-      - name: Deploy to Azure App Service
+      - name: Deploy image to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
