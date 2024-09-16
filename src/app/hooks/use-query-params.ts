@@ -24,7 +24,7 @@ export function useQueryParams<TQueryParams extends QueryParams>(
   const setQuery = useCallback<SetQuery<TQueryParams>>(
     (value) => {
       const newQuery = typeof value === "function" ? value(query) : value;
-      router.push(withQuery(pathname, newQuery));
+      router.push(withQuery(newQuery, pathname));
     },
     [router, pathname, query],
   );
