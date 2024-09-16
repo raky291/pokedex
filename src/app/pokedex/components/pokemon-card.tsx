@@ -1,18 +1,17 @@
 import Image, { ImageSizes } from "@/app/components/ui/image";
-import { getPokemonByName } from "@/app/pokedex/services/pokemon-api";
 import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
 import { getTranslations } from "next-intl/server";
+import { Pokemon } from "../services/types";
 import PokemonType from "./pokemon-type";
 
 export default async function PokemonCard({
-  name,
+  data,
   sizes,
 }: {
-  name: string;
+  data: Pokemon;
   sizes?: ImageSizes;
 }) {
   const t = await getTranslations("pokedex.pokemonCard");
-  const data = await getPokemonByName(name);
   return (
     <Card>
       <Box sx={{ aspectRatio: "1 / 1" }}>
@@ -23,6 +22,7 @@ export default async function PokemonCard({
           height={475}
           sizes={sizes}
           responsive
+          priority
         />
       </Box>
       <CardContent>

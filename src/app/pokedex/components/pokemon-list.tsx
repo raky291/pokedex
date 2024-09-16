@@ -1,20 +1,23 @@
 import { Unstable_Grid2 as Grid } from "@mui/material";
-import { Suspense } from "react";
-import { NamedAPIResourceList } from "../services/types";
+import { SearchParams } from "../lib/types";
+import { getPokemonByName, getPokemonList } from "../services/pokemon-api";
 import PokemonCard from "./pokemon-card";
-import PokemonCardSkeleton from "./pokemon-card-skeleton";
 
-export default function PokemonList({ data }: { data: NamedAPIResourceList }) {
+export default async function PokemonList({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const { limit, offset } = searchParams;
+  const resourceList = await getPokemonList(limit, offset);
+  const pokemonList = await Promise.all(
+    resourceList.results.map((resource) => getPokemonByName(resource.name)),
+  );
   return (
     <Grid container spacing={2}>
-      {data.results.map((resource, index) => (
+      {pokemonList.map((pokemon, index) => (
         <Grid key={index} xs={12} sm={6} md={4} lg={3}>
-          <Suspense key={resource.name} fallback={<PokemonCardSkeleton />}>
-            <PokemonCard
-              name={resource.name}
-              sizes={{ xs: 12, sm: 6, md: 4, lg: 3 }}
-            />
-          </Suspense>
+          <PokemonCard data={pokemon} sizes={{ xs: 12, sm: 6, md: 4, lg: 3 }} />
         </Grid>
       ))}
     </Grid>

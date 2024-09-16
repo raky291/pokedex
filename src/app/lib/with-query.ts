@@ -1,6 +1,6 @@
 import { QueryParams } from "./types";
 
-export function withQuery(url: string, query?: QueryParams): string {
+function getQueryString(query: QueryParams): string {
   const searchParams = new URLSearchParams();
 
   if (query) {
@@ -14,6 +14,10 @@ export function withQuery(url: string, query?: QueryParams): string {
     });
   }
 
-  const queryString = searchParams.toString();
-  return queryString ? `${url}?${queryString}` : url;
+  return searchParams.toString();
+}
+
+export function withQuery(query: QueryParams, pathname: string = ""): string {
+  const queryString = getQueryString(query);
+  return queryString ? `${pathname}?${queryString}` : pathname;
 }

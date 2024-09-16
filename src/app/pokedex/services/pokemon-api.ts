@@ -9,7 +9,7 @@ async function fetcher<T>(url: string, options?: RequestInit): Promise<T> {
 }
 
 export async function getPokemonList(limit?: string, offset?: string) {
-  const url = withQuery(`${baseUrl}pokemon`, { limit, offset });
+  const url = withQuery({ limit, offset }, `${baseUrl}pokemon`);
   return await fetcher<NamedAPIResourceList>(url);
 }
 
