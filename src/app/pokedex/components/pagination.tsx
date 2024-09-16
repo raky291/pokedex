@@ -15,7 +15,7 @@ export default function Pagination({
   const query = { ...defaultValues, ...searchParams };
   const t = useTranslations("pokedex.pagination");
 
-  const isPreviousDisabled = toInt(query.offset) <= 0;
+  const hasPrevious = toInt(query.offset) > 0;
   const previousOffset = toInt(query.offset) - toInt(query.limit);
   const nextOffset = toInt(query.offset) + toInt(query.limit);
 
@@ -24,18 +24,17 @@ export default function Pagination({
       <Button
         component={Link}
         href={withQuery({ ...query, offset: previousOffset.toString() })}
-        prefetch
+        prefetch={hasPrevious ? undefined : false}
         variant="outlined"
         color="inherit"
         startIcon={<NavigateBefore />}
-        disabled={isPreviousDisabled}
+        disabled={!hasPrevious}
       >
         {t("previous")}
       </Button>
       <Button
         component={Link}
         href={withQuery({ ...query, offset: nextOffset.toString() })}
-        prefetch
         variant="outlined"
         color="inherit"
         endIcon={<NavigateNext />}
