@@ -24,6 +24,7 @@ export default function Pagination({
       <Button
         component={Link}
         href={withQuery({ ...query, offset: previousOffset.toString() })}
+        prefetch
         variant="outlined"
         color="inherit"
         startIcon={<NavigateBefore />}
@@ -34,6 +35,7 @@ export default function Pagination({
       <Button
         component={Link}
         href={withQuery({ ...query, offset: nextOffset.toString() })}
+        prefetch
         variant="outlined"
         color="inherit"
         endIcon={<NavigateNext />}

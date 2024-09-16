@@ -8,7 +8,7 @@ export default function Header() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Button component={Link} href="/pokedex" color="inherit">
+          <Button component={Link} href="/pokedex" prefetch color="inherit">
             {t("pokedex")}
           </Button>
         </Toolbar>
