@@ -4,8 +4,7 @@ import { getLocale } from "next-intl/server";
 import Footer from "./components/layout/footer";
 import Header from "./components/layout/header";
 import Main from "./components/layout/main";
-import I18nClientProvider from "./components/providers/i18n-client-provider";
-import MuiThemeProvider from "./components/providers/mui-theme-provider";
+import Providers from "./components/providers/providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,21 +20,19 @@ export default async function Layout({
   return (
     <html lang={locale}>
       <body>
-        <I18nClientProvider>
-          <MuiThemeProvider>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                minHeight: "100vh",
-              }}
-            >
-              <Header />
-              <Main>{children}</Main>
-              <Footer />
-            </Box>
-          </MuiThemeProvider>
-        </I18nClientProvider>
+        <Providers>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "100vh",
+            }}
+          >
+            <Header />
+            <Main>{children}</Main>
+            <Footer />
+          </Box>
+        </Providers>
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 import { QueryParams } from "./types";
 
-export function getQueryString(query: QueryParams): string {
+function getQueryString(query: QueryParams): string {
   const searchParams = new URLSearchParams();
 
   if (query) {
