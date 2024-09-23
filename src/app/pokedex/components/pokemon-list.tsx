@@ -1,8 +1,8 @@
 import { Unstable_Grid2 as Grid } from "@mui/material";
-import { Pokemon } from "../services/types";
+import { PokemonV2Pokemon } from "../services/types";
 import PokemonCard from "./pokemon-card";
 
-export default function PokemonList({ data }: { data: Pokemon[] }) {
+export default function PokemonList({ data }: { data: PokemonV2Pokemon[] }) {
   return (
     <Grid container spacing={2}>
       {data.map((pokemon, index) => (

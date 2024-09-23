@@ -1,14 +1,14 @@
 import Image, { ImageSizes } from "@/app/components/ui/image";
 import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
-import { Pokemon } from "../services/types";
+import { PokemonV2Pokemon } from "../services/types";
 import PokemonType from "./pokemon-type";
 
 export default function PokemonCard({
   data,
   sizes,
 }: {
-  data: Pokemon;
+  data: PokemonV2Pokemon;
   sizes?: ImageSizes;
 }) {
   const t = useTranslations("pokedex.pokemonCard");
@@ -16,7 +16,7 @@ export default function PokemonCard({
     <Card>
       <Box sx={{ aspectRatio: "1 / 1" }}>
         <Image
-          src={data.sprites.other["official-artwork"].front_default!}
+          src={data.pokemon_v2_pokemonsprites[0].sprites.front_default}
           alt={data.name}
           width={475}
           height={475}
@@ -34,8 +34,8 @@ export default function PokemonCard({
             {data.name}
           </Typography>
           <Box sx={{ display: "flex", gap: 1 }}>
-            {data.types.map(({ type }, index) => (
-              <PokemonType key={index} name={type.name} />
+            {data.pokemon_v2_pokemontypes.map((type, index) => (
+              <PokemonType key={index} name={type.pokemon_v2_type.name} />
             ))}
           </Box>
         </Stack>
