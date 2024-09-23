@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { getTranslations } from "next-intl/server";
+import { Suspense } from "react";
 import Pagination from "./components/pagination";
 
 export default async function Layout({
@@ -13,7 +14,9 @@ export default async function Layout({
       <Typography component="h1" variant="h3">
         {t("heading")}
       </Typography>
-      <Pagination />
+      <Suspense fallback={null}>
+        <Pagination />
+      </Suspense>
       {children}
     </Stack>
   );

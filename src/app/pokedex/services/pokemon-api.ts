@@ -1,4 +1,4 @@
-import { withQuery } from "@/app/lib/with-query";
+import { getQueryString } from "@/app/lib/get-query-string";
 import { NamedAPIResourceList, Pokemon } from "./types";
 
 const baseUrl = "https://pokeapi.co/api/v2/";
@@ -9,7 +9,7 @@ async function fetcher<T>(url: string, options?: RequestInit): Promise<T> {
 }
 
 async function getResourceList(limit?: string, offset?: string) {
-  const url = withQuery({ limit, offset }, `${baseUrl}pokemon`);
+  const url = `${baseUrl}pokemon?${getQueryString({ limit, offset })}`;
   return await fetcher<NamedAPIResourceList>(url);
 }
 

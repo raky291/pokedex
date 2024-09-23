@@ -1,15 +1,8 @@
-"use client";
 import { Unstable_Grid2 as Grid } from "@mui/material";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { getPokemonList } from "../services/pokemon-api";
+import { Pokemon } from "../services/types";
 import PokemonCard from "./pokemon-card";
 
-export default function PokemonList() {
-  const { data } = useSuspenseQuery({
-    queryKey: ["pokemonList"],
-    queryFn: () => getPokemonList(),
-  });
-
+export default function PokemonList({ data }: { data: Pokemon[] }) {
   return (
     <Grid container spacing={2}>
       {data.map((pokemon, index) => (

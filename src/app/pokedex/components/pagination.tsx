@@ -1,43 +1,49 @@
+"use client";
+import { useQueryParams } from "@/app/hooks/use-query-params";
 import { toInt } from "@/app/lib/to-int";
-import { withQuery } from "@/app/lib/with-query";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { SearchParams } from "../lib/types";
 
-export default function Pagination({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
-  const defaultValues = { limit: "20", offset: "0" };
-  const query = { ...defaultValues, ...searchParams };
+export default function Pagination() {
+  const [query, setQuery] = useQueryParams<SearchParams>();
   const t = useTranslations("pokedex.pagination");
 
-  const hasPrevious = toInt(query.offset) > 0;
-  const previousOffset = toInt(query.offset) - toInt(query.limit);
-  const nextOffset = toInt(query.offset) + toInt(query.limit);
+  const limit = toInt(query.limit ?? "20");
+  const offset = toInt(query.offset ?? "0");
+  const isFirstPage = (offset: number): boolean => offset === 0;
+
+  const handlePreviousClick = () => {
+    const newOffset = offset - limit;
+    setQuery(
+      isFirstPage(newOffset)
+        ? {}
+        : { limit: limit.toString(), offset: newOffset.toString() },
+    );
+  };
+
+  const handleNextClick = () => {
+    const newOffset = offset + limit;
+    setQuery({ limit: limit.toString(), offset: newOffset.toString() });
+  };
 
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
       <Button
-        component={Link}
-        href={withQuery({ ...query, offset: previousOffset.toString() })}
-        prefetch={hasPrevious ? undefined : false}
         variant="outlined"
         color="inherit"
         startIcon={<NavigateBefore />}
-        disabled={!hasPrevious}
+        onClick={handlePreviousClick}
+        disabled={isFirstPage(offset)}
       >
         {t("previous")}
       </Button>
       <Button
-        component={Link}
-        href={withQuery({ ...query, offset: nextOffset.toString() })}
         variant="outlined"
         color="inherit"
         endIcon={<NavigateNext />}
+        onClick={handleNextClick}
       >
         {t("next")}
       </Button>
