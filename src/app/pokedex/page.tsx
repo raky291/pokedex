@@ -1,24 +1,25 @@
-import { Suspense } from "react";
-import { withQuery } from "../lib/with-query";
-import Pagination from "./components/pagination";
-import PokemonList from "./components/pokemon-list";
-import PokemonListSkeleton from "./components/pokemon-list-skeleton";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+import { getQueryClient } from "../lib/get-query-client";
+import PokemonListQuery from "./components/pokemon-list-query";
 import { SearchParams } from "./lib/types";
+import { getPokemonList } from "./services/pokemon-api";
 
 export default async function Pokedex({
   searchParams,
 }: {
   searchParams: SearchParams;
 }) {
+  const { limit, offset } = searchParams;
+  const queryClient = getQueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["pokemonList", limit, offset],
+    queryFn: () => getPokemonList(limit, offset),
+  });
+
   return (
-    <>
-      <Pagination searchParams={searchParams} />
-      <Suspense
-        key={withQuery(searchParams)}
-        fallback={<PokemonListSkeleton />}
-      >
-        <PokemonList searchParams={searchParams} />
-      </Suspense>
-    </>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <PokemonListQuery />
+    </HydrationBoundary>
   );
 }

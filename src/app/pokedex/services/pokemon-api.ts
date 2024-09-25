@@ -1,18 +1,43 @@
-import { withQuery } from "@/app/lib/with-query";
-import { NamedAPIResourceList, Pokemon } from "./types";
+import { initialLimit, initialOffset } from "../lib/constants";
+import { ApiResponse } from "./types";
 
-const baseUrl = "https://pokeapi.co/api/v2/";
+const baseUrl = "https://beta.pokeapi.co/graphql/v1beta";
 
 async function fetcher<T>(url: string, options?: RequestInit): Promise<T> {
   const response = await fetch(url, options);
   return await response.json();
 }
 
-export async function getPokemonList(limit?: string, offset?: string) {
-  const url = withQuery({ limit, offset }, `${baseUrl}pokemon`);
-  return await fetcher<NamedAPIResourceList>(url);
+function createQuery(limit: string, offset: string): string {
+  return `
+    query getPokemonList {
+      pokemon_v2_pokemon(limit: ${limit}, offset: ${offset}) {
+        id
+        name
+        pokemon_v2_pokemontypes {
+          pokemon_v2_type {
+            id
+            name
+          }
+        }
+        pokemon_v2_pokemonsprites {
+          sprites(path: "other.official-artwork")
+        }
+      }
+    }
+  `;
 }
 
-export async function getPokemonByName(name: string) {
-  return await fetcher<Pokemon>(`${baseUrl}pokemon/${name}`);
+export async function getPokemonList(
+  limit: string = initialLimit,
+  offset: string = initialOffset,
+) {
+  const query = createQuery(limit, offset);
+
+  const { data } = await fetcher<ApiResponse>(baseUrl, {
+    method: "POST",
+    body: JSON.stringify({ query }),
+  });
+
+  return data.pokemon_v2_pokemon;
 }

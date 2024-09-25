@@ -1,36 +1,32 @@
-export interface NamedAPIResource {
-  name: string;
-  url: string;
+export interface ApiResponse {
+  data: Data;
 }
 
-export interface NamedAPIResourceList {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: NamedAPIResource[];
+export interface Data {
+  pokemon_v2_pokemon: PokemonV2Pokemon[];
 }
 
-export interface Pokemon {
+export interface PokemonV2Pokemon {
   id: number;
   name: string;
-  sprites: PokemonSprites;
-  types: PokemonType[];
+  pokemon_v2_pokemontypes: PokemonV2Pokemontype[];
+  pokemon_v2_pokemonsprites: PokemonV2Pokemonsprite[];
 }
 
-export interface PokemonType {
-  slot: number;
-  type: NamedAPIResource;
+export interface PokemonV2Pokemontype {
+  pokemon_v2_type: PokemonV2Type;
 }
 
-export interface PokemonSprites {
-  other: OtherPokemonSprites;
+export interface PokemonV2Type {
+  id: number;
+  name: string;
 }
 
-export interface OtherPokemonSprites {
-  "official-artwork": OfficialArtwork;
+export interface PokemonV2Pokemonsprite {
+  sprites: Sprites;
 }
 
-export interface OfficialArtwork {
-  front_default: string | null;
-  front_shiny: string | null;
+export interface Sprites {
+  front_shiny: string;
+  front_default: string;
 }

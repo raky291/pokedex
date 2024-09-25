@@ -1,6 +1,8 @@
 import { QueryParams } from "./types";
 
-export function getQueryParams(searchParams: URLSearchParams): QueryParams {
+export function getQueryParams<TQueryParams extends QueryParams>(
+  searchParams: URLSearchParams,
+): TQueryParams {
   const query: QueryParams = {};
 
   searchParams.forEach((param, key) => {
@@ -16,5 +18,5 @@ export function getQueryParams(searchParams: URLSearchParams): QueryParams {
     }
   });
 
-  return query;
+  return query as TQueryParams;
 }
