@@ -1,3 +1,4 @@
+import { initialLimit, initialOffset } from "../lib/constants";
 import { ApiResponse } from "./types";
 
 const baseUrl = "https://beta.pokeapi.co/graphql/v1beta";
@@ -28,8 +29,8 @@ function createQuery(limit: string, offset: string): string {
 }
 
 export async function getPokemonList(
-  limit: string = "20",
-  offset: string = "0",
+  limit: string = initialLimit,
+  offset: string = initialOffset,
 ) {
   const query = createQuery(limit, offset);
 

@@ -14,15 +14,13 @@ export default function PokemonCard({
   const t = useTranslations("pokedex.pokemonCard");
   return (
     <Card>
-      <Box sx={{ aspectRatio: "1 / 1" }}>
+      <Box sx={{ position: "relative", aspectRatio: "1 / 1" }}>
         <Image
           src={data.pokemon_v2_pokemonsprites[0].sprites.front_default}
           alt={data.name}
-          width={475}
-          height={475}
+          fill
           sizes={sizes}
-          responsive
-          priority
+          quality={50}
         />
       </Box>
       <CardContent>

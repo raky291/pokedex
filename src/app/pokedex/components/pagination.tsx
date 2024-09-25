@@ -4,14 +4,15 @@ import { toInt } from "@/app/lib/to-int";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import { useTranslations } from "next-intl";
+import { initialLimit, initialOffset } from "../lib/constants";
 import { SearchParams } from "../lib/types";
 
 export default function Pagination() {
   const [query, setQuery] = useQueryParams<SearchParams>();
   const t = useTranslations("pokedex.pagination");
 
-  const limit = toInt(query.limit ?? "20");
-  const offset = toInt(query.offset ?? "0");
+  const limit = toInt(query.limit ?? initialLimit);
+  const offset = toInt(query.offset ?? initialOffset);
   const isFirstPage = (offset: number): boolean => offset === 0;
 
   const handlePreviousClick = () => {
